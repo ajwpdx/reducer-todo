@@ -12,6 +12,7 @@ const AddToDoForm = props => {
                 id='addToDo'
                 />
             </label>
+            <button>Add!</button>
         </form>
     )
 
