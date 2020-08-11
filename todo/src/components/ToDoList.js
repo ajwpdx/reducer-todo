@@ -6,7 +6,7 @@ const ToDoList = props => {
         dispatch
     } = props
     return (
-        <div>
+        <div className='todo-container'>
            {todos.map((item) => (
             <ToDoItem
                key = {item.id}
