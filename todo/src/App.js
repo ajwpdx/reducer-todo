@@ -1,28 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import AddToDoForm from './components/AddToDoForm';
 import ToDoList from './components/ToDoList'
+import { toDoReducer } from './reducers/toDoReducer';
 
-const initialToDos = [
-  {
-    item: 'Learn about reducers',
+const initialState = {
+
+    todos: [
+      {item: 'Learn about reducers',
     completed: false,
-    id: 3892987589
+    id: 3892987589}
+  ]
   }
-]
 
 
 function App() {
-  const [toDos, setToDos] = useState(initialToDos)
+
+  const [state, dispatch] = useReducer(toDoReducer, initialState.todos)
+
+  const addToDo = item => {
+
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Things to Learn</h1>
       </header>
-    <AddToDoForm/>
+    <AddToDoForm
+      dispatch = {dispatch}
+    />
     
     <ToDoList
-    toDos={toDos}
+    todos={state}
     />
     </div>
   );

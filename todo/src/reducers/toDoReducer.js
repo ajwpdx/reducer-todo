@@ -5,12 +5,17 @@ export const initialState = {
   }
 
   export const toDoReducer = (state, action) => {
-      console.log(state, action)
+    console.log(state, action)
       switch (action.type) {
           case 'ADD_TODO': 
-          return {
-              ...state,
+          return (
+            [...state,
+            {item: action.payload,
+            id: new Date(),
+            completed: false}]
+          )
               
-          }
+              
+          
       }
   }
