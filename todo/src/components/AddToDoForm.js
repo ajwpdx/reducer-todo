@@ -20,15 +20,14 @@ const AddToDoForm = props => {
 
     return (
         <form onSubmit = {onSubmit}>
-            <label htmlFor='addToDo'>
-                Add an item:{' '}
+            <label className = 'add-todo' htmlFor='addToDo'>
                 <input
                 value={newToDoText}
                 onChange={handleChanges}
                 name='addToDo'
                 id='addToDo'
+                placeholder= 'Add an item'
                 />
-                {' '}
             </label>
             <button>Add!</button>
         </form>
