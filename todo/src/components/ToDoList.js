@@ -2,15 +2,16 @@ import React from 'react'
 import ToDoItem from './ToDoItem'
 const ToDoList = props => {
    const {
-        todos
+        todos,
+        dispatch
     } = props
     return (
         <div>
-           <h2>Title of List</h2> 
            {todos.map((item) => (
             <ToDoItem
                key = {item.id}
                item = {item}
+               dispatch = {dispatch}
                />
            ))}
         </div>

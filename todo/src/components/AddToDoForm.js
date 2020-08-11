@@ -15,6 +15,7 @@ const AddToDoForm = props => {
     const onSubmit = e => {
         e.preventDefault()
         dispatch({ type: 'ADD_TODO', payload: newToDoText})
+        setNewToDoText('')
     }
 
     return (

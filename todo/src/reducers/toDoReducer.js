@@ -13,9 +13,25 @@ export const initialState = {
             {item: action.payload,
             id: new Date(),
             completed: false}]
+
+          )     
+          case 'MARK_COMPLETED':
+          return (
+            state.map( item => {
+              if(item.id === action.payload.id) {
+                return {
+                  ...item,
+                  completed: !item.completed
+                } 
+              } else {
+                return item
+              }
+            })
           )
-              
-              
-          
+          case 'CLEAR_COMPLETED':
+          return (
+            state.filter( item => item.completed === false)
+          )
       }
+
   }
